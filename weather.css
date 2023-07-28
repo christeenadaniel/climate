@@ -1,0 +1,14 @@
+body{
+    background-image: url("./images/images\ \(1\).jpeg");
+    background-size: cover;
+    /* background-repeat: no-repeat; */
+}
+p.size1 {
+    font-size: 18px;
+  }
+  p.size2 {
+    font-size: 70px;
+  }
+  #imgDiv{
+    width: 100%;
+  }
