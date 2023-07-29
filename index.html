@@ -24,16 +24,16 @@
             <div class="input-group input-group-lg mb-3 mt-5 w-50 container">
                 <span class="input-group-text opacity-50" id="basic-addon1">
                     <i class="fa-solid fa-magnifying-glass "></i></span>
-                <input id="pname" type="text" class="form-control opacity-50" placeholder="Enter the name of the place"
+                <input id="pname" type="text" class="form-control opacity-50" placeholder="Enter city name"
                     aria-label="placename" aria-describedby="basic-addon1">
-                <button class="btn btn-outline-success opacity-70" type="button" onclick="getData()">Search</button>
+                <button class="btn btn-outline-info opacity-70" type="button" onclick="getData()">Search</button>
             </div>
 
         </form>
     </div>
     <div id="showDate"></div>
     <div class="container w-100 row border border-0 m-5">
-        <div id="desc" class="text-center container w-50"></div>
+        <div id="desc" class="text-center col-lg-6 "></div>
         <div class="col-lg-6 border border-0 text-center" id="result">
         </div>
     </div>
@@ -71,7 +71,7 @@
             };
             day = date.toLocaleString('en-IN', options);
             placeName = placeDetails.name
-            showDate.innerHTML = `<div class="row">
+            showDate.innerHTML = `<div class="row container w-100">
                     <h2 class="text-center text-white">${placeName}</h2>
                     <h5 class="text-center text-white">${day}</h5>
                 </div>`
@@ -79,12 +79,13 @@
 
             description = placeDetails.weather[0].description
             desc.innerHTML =
-                ` <div class="col-lg-6 border border-0" id="imgDiv">
-                <img width="100%" height="250px" src="./images/sun-removebg-preview.png">
-                <div class="text-center container w-25">
+                `<div class="border border-0 ">
+                <img width="100%" height="250px" src="./images/images-removebg-preview.png">
+                <div class="text-center">
                     <h4 class="text-center text-white">${description}</h4>
                 </div>
             </div>`
+  
             // <div class="col-lg-6 border border-dark border-opacity-10" id="imgDiv">
             temperature = Math.ceil(placeDetails.main["temp"])
             // degree = Math.ceil((temperature - 32) * 5 / 9)
@@ -92,7 +93,7 @@
             humidity = placeDetails.main["humidity"]
             wind = placeDetails.wind["speed"]
             result.innerHTML =
-                `<div class="card text-bg-dark border-0">
+           `<div class="card text-bg-dark border-0">
                 <div class="card-img-overlay ">
                     <p class="card-title size2" >${temperature}°C</p>
                     <p class="card-text size1">Humidity : ${humidity}%</p>
